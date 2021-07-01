@@ -3,7 +3,7 @@ import "./App.css";
 import { AddListForm } from "./components/AddListForm";
 import { List } from "./components/List";
 
-interface IState {
+export interface IState {
   people: {
     name: string;
     age: number;
@@ -13,14 +13,18 @@ interface IState {
 }
 
 function App() {
-  const [people, setpeople] = useState<IState["people"]>([
-    { name: "Aaron Rodgers", age: 36, url: "", note: "Test" },
+  const [people, setPeople] = useState<IState["people"]>([
+    {
+      name: "Aaron Rodgers",
+      age: 36,
+      url: "https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/8439.png",
+    },
   ]);
   return (
     <div className='App'>
       <h1>People Invited to my Party</h1>
       <List people={people} />
-      <AddListForm />
+      <AddListForm people={people} setPeople={setPeople} />
     </div>
   );
 }

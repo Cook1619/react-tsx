@@ -1,14 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
-
-interface IProps {
-  people: {
-    name: string;
-    age: number;
-    url: string;
-    note?: string;
-  }[];
-}
+import { IState as IProps } from "../App";
 
 export const List: React.FC<IProps> = ({ people }) => {
   const renderList = (): JSX.Element[] => {
