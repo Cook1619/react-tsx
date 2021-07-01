@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { List } from "./components/List";
 import "./App.css";
+import { AddListForm } from "./components/AddListForm";
+import { List } from "./components/List";
 
 interface IState {
   people: {
@@ -19,6 +20,7 @@ function App() {
     <div className='App'>
       <h1>People Invited to my Party</h1>
       <List people={people} />
+      <AddListForm />
     </div>
   );
 }
